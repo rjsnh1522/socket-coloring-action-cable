@@ -1,0 +1,27 @@
+<div class="center-block">
+<h3>Socket application <span>-- your username is : <span id="username"></span></span></h1>
+</div>
+<p class="center-block success"> to play this game please select a square then select a color</p>
+<div class="row">
+	<div class="col-md-3">
+		<div class="row">
+				<div class="col-md-8">
+						<label>Select color from below</label><br>
+						<input type="text" name="coolor" id="colorPicker">
+				</div>
+
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+			<p class="showMessage"></p>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-8">
+		<p class="error"></p>
+		<div id="drawing-table" class="clickHigh">
+		<%= render partial: 'color_grid' %>
+	</div>
+	</div>
+
+</div>

@@ -1,0 +1,24 @@
+
+	<table>
+			<% 20.times do |row| %>
+				<tr class='grid' data-rownumb="<%=row %>">
+					<% 20.times do |col| %>
+						<td data-row="<%=row%>" data-col="<%=col%>" class='highlight' <%= add_color_and_tool_tip(row,col) %> >&nbsp;</td>
+					<% end%>
+				<tr>
+			<% end %>
+	</table>
+	<script type="text/javascript">
+	 	$('.highlight').mouseenter(function() {
+			if(typeof $(this).attr('style') !== 'undefined'){
+				var username = $(this).attr("data-username");
+				var ontime   = $(this).attr("data-ontime");
+				var withdate = $(this).attr("data-withdate");
+				$(".showMessage").html("This box is colred by "+ username +" on "+ withdate+" at "+ ontime+" utc");
+			}
+    }).mouseleave(function() {
+    	if(typeof $(this).attr('style') !== 'undefined'){
+    			$(".showMessage").html("");
+    	}
+    });
+</script>
